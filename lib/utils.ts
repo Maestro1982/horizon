@@ -38,22 +38,22 @@ export const formatDateTime = (dateString: Date) => {
   };
 
   const formattedDateTime: string = new Date(dateString).toLocaleString(
-    'en-US',
+    'be-BE',
     dateTimeOptions
   );
 
   const formattedDateDay: string = new Date(dateString).toLocaleString(
-    'en-US',
+    'be-BE',
     dateDayOptions
   );
 
   const formattedDate: string = new Date(dateString).toLocaleString(
-    'en-US',
+    'be-BE',
     dateOptions
   );
 
   const formattedTime: string = new Date(dateString).toLocaleString(
-    'en-US',
+    'be-BE',
     timeOptions
   );
 
@@ -66,7 +66,7 @@ export const formatDateTime = (dateString: Date) => {
 };
 
 export function formatAmount(amount: number): string {
-  const formatter = new Intl.NumberFormat('en-US', {
+  const formatter = new Intl.NumberFormat('be-BE', {
     style: 'currency',
     currency: 'EUR',
     minimumFractionDigits: 2,
