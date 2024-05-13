@@ -8,6 +8,8 @@ import { sidebarLinks } from '@/constants';
 
 import { cn } from '@/lib/utils';
 
+import Footer from './Footer';
+
 const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
   return (
@@ -48,7 +50,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
         })}
         User
       </nav>
-      Footer
+      <Footer user={user} />
     </section>
   );
 };
