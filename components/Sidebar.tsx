@@ -8,7 +8,7 @@ import { sidebarLinks } from '@/constants';
 
 import { cn } from '@/lib/utils';
 
-import Footer from './Footer';
+import Footer from '@/components/Footer';
 
 const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();

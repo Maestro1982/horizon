@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 
 import CustomInput from '@/components/CustomInput';
+import PlaidLink from '@/components/PlaidLink';
 
 import { authFormSchema } from '@/lib/utils';
 import { signIn, signUp } from '@/lib/actions/user.actions';
@@ -41,7 +42,19 @@ const AuthForm = ({ type }: { type: string }) => {
     try {
       // Sign up with Appwrite & create Plain link token
       if (type === 'sign-up') {
-        const newUser = await signUp(data);
+        const userData = {
+          firstName: data.firstName!,
+          lastName: data.lastName!,
+          address1: data.address1!,
+          city: data.city!,
+          state: data.state!,
+          postalCode: data.postalCode!,
+          dateOfBirth: data.dateOfBirth!,
+          ssn: data.ssn!,
+          email: data.email,
+          password: data.password,
+        };
+        const newUser = await signUp(userData);
         setUser(newUser);
       }
 
@@ -87,7 +100,9 @@ const AuthForm = ({ type }: { type: string }) => {
         </div>
       </header>
       {user ? (
-        <div className='flex flex-col gap-4'>{/* Plaid Link */}</div>
+        <div className='flex flex-col gap-4'>
+          <PlaidLink user={user} variant='primary' />
+        </div>
       ) : (
         <>
           <Form {...form}>
@@ -148,7 +163,7 @@ const AuthForm = ({ type }: { type: string }) => {
                       control={form.control}
                       name='ssn'
                       label='SSN'
-                      placeholder='Ex: 543-98-6217'
+                      placeholder='Ex: 1234'
                     />
                   </div>
                 </>
