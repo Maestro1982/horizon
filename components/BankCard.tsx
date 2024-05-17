@@ -34,7 +34,7 @@ const BankCard = ({
           </article>
         </div>
         <div className='bank-card_icon'>
-          <Image src='/icons/Paypass.svg' alt='Pay' height={24} width={20} />
+          <Image src='/icons/paypass.svg' alt='Pay' height={24} width={20} />
           <Image
             src='/icons/mastercard.svg'
             alt='Mastercard'
