@@ -40,3 +40,4 @@ and many more, including code architecture and reusability.
 ![alt text](public/icons/image-5.png)
 ![alt text](public/icons/image-6.png)
 ![alt text](public/icons/image-7.png)
+![alt text](public/icons/image-8.png)
